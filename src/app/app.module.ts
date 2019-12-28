@@ -10,6 +10,7 @@ import { BlogViewComponent } from "./blog-view/blog-view.component";
 import { BlogHttpService } from "./blog-http.service";
 import { AboutComponent } from './about/about.component';
 import { PostBlogComponent } from './post-blog/post-blog.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { PostBlogComponent } from './post-blog/post-blog.component';
       { path: "**", component: NotFoundComponent }
     ])
   ],
-  declarations: [AppComponent, HomeComponent, BlogViewComponent, AboutComponent, PostBlogComponent],
+  declarations: [AppComponent, HomeComponent, BlogViewComponent, AboutComponent, PostBlogComponent, BlogEditComponent],
   bootstrap: [AppComponent],
   providers: [BlogHttpService]
 })
