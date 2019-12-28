@@ -9,6 +9,7 @@ import { HomeComponent } from "./home/home.component";
 import { BlogViewComponent } from "./blog-view/blog-view.component";
 import { BlogHttpService } from "./blog-http.service";
 import { AboutComponent } from './about/about.component';
+import { PostBlogComponent } from './post-blog/post-blog.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,7 @@ import { AboutComponent } from './about/about.component';
       { path: "**", component: NotFoundComponent }
     ])
   ],
-  declarations: [AppComponent, HomeComponent, BlogViewComponent, AboutComponent],
+  declarations: [AppComponent, HomeComponent, BlogViewComponent, AboutComponent, PostBlogComponent],
   bootstrap: [AppComponent],
   providers: [BlogHttpService]
 })
