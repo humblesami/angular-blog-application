@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogHttpService } from "../blog-http.service";
 import { ActivatedRoute, Router } from "@angular/router";
+import { ToastrService } from 'ngx-toastr';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-blog-view',
@@ -10,7 +12,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class BlogViewComponent implements OnInit {
 
 public currentBlog;
-  constructor( private blogHttpService: BlogHttpService, private _route: ActivatedRoute) { }
+  constructor( private blogHttpService: BlogHttpService, private _route: ActivatedRoute, private toastr: ToastrService, private router: Router, private location: Location) { }
 
   ngOnInit() {
     let myBlogId = this._route.snapshot.paramMap.get('blogId');
@@ -52,6 +54,12 @@ public currentBlog;
 
 
     )
+  }
+
+    goBackToPreviousPage(): any {
+
+    this.location.back();
+
   }
 
 }

@@ -17,7 +17,6 @@ errorMessage: any;
     this.blogHttpService.getAllBlogs().subscribe(
       
               data => {
-                console.log("Demo", data.data);
                 this.allBlogs = data.data;
                 return this.allBlogs;
               },
