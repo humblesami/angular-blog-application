@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogHttpService } from './blogHttpService'
+import { BlogHttpService } from '../blog-http.service';
 
 @Component({
   selector: 'app-home',
