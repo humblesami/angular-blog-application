@@ -8,15 +8,24 @@ import { BlogHttpService } from '../blog-http.service';
 })
 export class HomeComponent implements OnInit {
 
+allBlogs: any;
+errorMessage: any;
+ 
   constructor(private blogHttpService: BlogHttpService) { }
 
-  allBlogs;
   ngOnInit() {
-    this.allBlogs = this.blogHttpService.getAllBlogs()
-    .subscribe((data: Config) => this.config = {
-        heroesUrl: data['heroesUrl'],
-        textfile:  data['textfile']
-    });
+    this.blogHttpService.getAllBlogs().subscribe(
+      
+              data => {
+                console.log("Demo", data.data);
+                this.allBlogs = data.data;
+                return this.allBlogs;
+              },
+              error =>{
+                console.log("some error occured");
+                console.log(error.errorMessage)
+              }
+            );
   }
 
 }

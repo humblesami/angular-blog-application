@@ -1,3 +1,25 @@
-<p>
-Hello
-</p>
+<div class="container">
+	<div class="row" *ngIf="currentBlog">
+		<div class="col-md-4"></div>
+		<div class="col-md-8">
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">{{currentBlog.title | uppercase}}</h5>
+					<h6 class="card-subtitle mb-2 text-muted">Posted on
+						{{currentBlog.created | date}}<br/> by {{currentBlog.author}}</h6>
+						<p class="card-text">{{currentBlog.description}}</p>
+						<div class="container">
+							<div class="row">
+								<div class="col">
+                  <button [routerLink]="['/edit',currentBlog.blogId]" type="button" class="btn btn-outline-primary">Edit</button>
+                  <button (click)="deleteThisBlog()" type="button" class="btn btn-outline-primary">Delete</button>
+                  <button (click)="goBackToPreviousPage()" type="button" class="btn btn-outline-primary">Go Back</button>
+                </div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+</div>
