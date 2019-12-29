@@ -29,4 +29,14 @@ export class BlogHttpService {
     );
     return myResponse;
   }
+
+    editBlog(blogId,blogData): any {
+    let myResponse = this.http.put(this.baseUrl + '/' + blogId + '/edit' + '?authToken=' + this.apiKey, blogData)
+    return myResponse;
+  }
+
+    createBlog(blogData): any {
+    let myResponse = this.http.post(this.baseUrl + '/create' + '?authToken=' + this.apiKey, blogData)
+    return myResponse;
+  } 
 }

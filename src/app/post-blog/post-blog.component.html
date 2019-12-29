@@ -4,22 +4,22 @@
 		<div class="col">
 			<div class="card" style="width: 30rem;">
 				<div class="card-body">
-					<form (ngSubmit)="editThisBlog()">
+					<form (ngSubmit)="createBlog()">
 						<div class="form-group">
 							<label for="exampleInputEmail1">Blog Title</label>
-							<input name="blogTitle" [(ngModel)]="currentBlog.title" class="form-control" #title="ngModel" placeholder="Enter blog Title">
+							<input name="blogTitle" [(ngModel)]="blogTitle" class="form-control" #title="ngModel" placeholder="Enter blog Title">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Description</label>
-							<input type="text" name="blogDescription" [(ngModel)]="currentBlog.description" class="form-control" id="exampleInputPassword1" placeholder="Enter Description">
+							<input type="text" name="blogDescription" [(ngModel)]="blogDescription" class="form-control" id="exampleInputPassword1" placeholder="Enter Description">
             </div>
             <div class="form-group">
 							<label for="exampleInputPassword1">Enter the blog body</label>
-              <textarea name="blogBodyHtml" [(ngModel)]="currentBlog.bodyHtml" #bodyHtml="ngModel" class="form-control" rows="3" required></textarea>
+              <textarea name="blogBodyHtml" [(ngModel)]="blogBodyHtml" #bodyHtml="ngModel" class="form-control" rows="3" required></textarea>
             </div>
             <div class="form-group">
 							<label for="exampleInputPassword1">Category</label>
-							<select [(ngModel)]="currentBlog.category" #category="ngModel" name="blogCategory" class="form-control" id="category" required>
+							<select [(ngModel)]="blogCategory" #category="ngModel" name="blogCategory" class="form-control" id="category" required>
                     <option *ngFor="let category of possibleCategories" [value]="category">{{category}}</option>
                   </select>
             </div>
