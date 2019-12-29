@@ -1,6 +1,7 @@
 <div class="container" style="text-align:center">
 	<div class="row" style="text-align:center">
-		<div class="col-md-12" style="font-size:22px">All Blogs </div>
+		<div class="col-md-12" style="font-size:22px">All Blogs
+		</div>
 		<br><br><br><br>
   </div>
 		<div class="container">
@@ -18,3 +19,31 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="card-deck row">
+		<div *ngFor="let blog of allBlogs" class="col-xs-12 col-sm-6 col-md-4">
+
+			<div class="card">
+
+				<div class="view overlay">
+					<img class="card-img-top" src='assets/images/{{blog.category}}.jpg' alt="Card image cap">
+					<a href="#!">
+						<div class="mask rgba-white-slight"></div>
+					</a>
+				</div>
+
+				<div class="card-body">
+
+					<h4 class="card-title">{{blog.title}}</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Posted on
+								{{blog.created | date}} by {{blog.author}}</h6>
+
+					<p class="card-text">{{blog.description}}</p>
+
+					<button type="button" class="btn btn-light-blue btn-md">Read more</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
