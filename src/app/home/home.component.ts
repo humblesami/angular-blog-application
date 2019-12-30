@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogHttpService } from '../blog-http.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -27,4 +28,8 @@ errorMessage: any;
               }
             );
   }
+
+//   goToUrl(): void {
+//     this.document.location.href = 'https://stackoverflow.com';
+// }
 }
