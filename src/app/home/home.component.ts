@@ -29,6 +29,10 @@ errorMessage: any;
             );
   }
 
+  goGoogle(): void {
+    window.location.href = 'http://www.google.com'; 
+  }
+
 //   goToUrl(): void {
 //     this.document.location.href = 'https://stackoverflow.com';
 // }
